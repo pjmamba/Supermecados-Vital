@@ -1,0 +1,105 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Trabalhe conosco</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="index.html">Trabalhe conosco</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					
+					<li><a href="generic.html">Sobre nós</a></li>
+
+					<li><a href="fale.html">Fale conosco</a></li>
+
+					<li><a href="trabalhe.html">Trabalhe conosco</a></li>
+				</ul>
+			</nav>
+
+		<!-- Heading -->
+			<div id="heading" >
+				<h1>Trabalhe conosco</h1>
+			</div>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<center><div class="content">
+						<header>
+                            <h1>Envie seu currículo</h1>
+						</header>
+
+						 <form action="#" method="POST" enctype="multipart/form-data">
+     							 <input type="file" name="fileUpload">
+     							 <input type="submit" value="Enviar">
+  						 </form>
+
+					<?php
+   						if(isset($_FILES['fileUpload']))
+						   {
+      							date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
+
+    							  $ext = strtolower(substr($_FILES['fileUpload']['name'],-4)); //Pegando extensão do arquivo
+   							   $new_name = date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
+      							   $dir = 'uploads/'; //Diretório para uploads
+
+    							  move_uploaded_file($_FILES['fileUpload']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
+  						}
+								?>
+
+
+					</div></center>
+                    
+                   
+			</section>
+
+	
+			<footer id="footer">
+				<div class="inner">
+					<div class="content">
+						<section>
+							<h3>Supermercados Vital</h3>
+							<p>Já experimentou acreditar em você? Tente... Você não faz idéia do que é capaz!</p>
+						</section>
+					
+						<section>
+							<h4>Redes Sociais</h4>
+							<ul class="plain">
+								<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+								<li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+								<li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+								<li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="copyright">
+						&copy; Untitled. Photos <a href="https://unsplash.co">Unsplash</a>, Video <a href="https://coverr.co">Coverr</a>.
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
